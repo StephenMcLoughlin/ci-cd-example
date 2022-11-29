@@ -6,7 +6,7 @@ jobs:
       - image: cimg/node:19.1.0
     steps:
       - checkout
-      -run:
+      - run:
         name: npm Install
         command: npm install
       - run:
