@@ -1,0 +1,19 @@
+on: push
+name: Slack Notification
+jobs:
+  slackFailNotification:
+    name: Slack Notification
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Slack Notification
+      uses: rtCamp/action-slack-notify@v2
+      if: ${{ always() }}
+      env:
+        SLACK_CHANNEL: alerts
+        SLACK_COLOR: ${{ job.status }} # or a specific color like 'good' or '#ff00ff'
+        SLACK_ICON_EMOJI: ':poop:'
+        SLACK_MESSAGE: 'Any craic?'
+        SLACK_TITLE: How ya doing?
+        SLACK_USERNAME: Gary
+        SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
