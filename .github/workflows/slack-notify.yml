@@ -19,7 +19,7 @@ jobs:
         SLACK_CHANNEL: alerts
         SLACK_COLOR: ${{ job.status }}
         SLACK_ICON_EMOJI: ':poop:'
-        SLACK_MESSAGE: 'Any craic?'
+        SLACK_MESSAGE: 'There's something up with your push mate'
         SLACK_TITLE: Something's gone wrong
         SLACK_USERNAME: Gary
         SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
