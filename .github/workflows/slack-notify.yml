@@ -10,7 +10,7 @@ jobs:
   slackFailNotification:
     name: Slack Notification
     runs-on: ubuntu-latest
-    if: ${{ always()}}
+    if: ${{ always() }}
     steps:
     - uses: actions/checkout@v2
     - name: Slack Notification
@@ -21,5 +21,4 @@ jobs:
         SLACK_ICON_EMOJI: ':poop:'
         SLACK_TITLE: Message
         SLACK_USERNAME: Gary
-        MSG_MINIMAL: true
         SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
