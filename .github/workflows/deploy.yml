@@ -18,13 +18,11 @@ jobs:
         with:
           node-version: 18
 
-      - name: Install dependencies
+      - name: Install dependencies and run tests
         run: |
           cd src 
           npm install
-
-      - name: Run tests
-        run: npm test
+          npm test
 
   build-image:
     needs: test
