@@ -6,7 +6,7 @@ on:
       - main 
 
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
 
     steps:
@@ -16,10 +16,29 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: 16
+          node-version: 18
 
       - name: Install dependencies
-        run: npm install
+        run: |
+          cd src 
+          npm install
 
       - name: Run tests
         run: npm test
+
+  build-image:
+    needs: test
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Docker
+        run: |
+          sudo apt-get update
+          sudo apt-get -y install docker.io
+
+      - name: Build Docker image
+        run: |
+          docker build -t my-app-image .

@@ -10,8 +10,8 @@ describe('multiply', () => {
         expect(() => multiply(2,'c')).toThrow()
     })
 
-    it('should fail so I can trigger notification', () => {
-        const result = multiply(2,2)
-        expect(result).toBe(2)
-    })
+    // it('should fail so I can trigger notification', () => {
+    //     const result = multiply(2,2)
+    //     expect(result).toBe(2)
+    // })
 })
