@@ -47,4 +47,4 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/testDeploy:latest
+          tags: ${{ secrets.DOCKER_USERNAME }}/testdeploy:latest
